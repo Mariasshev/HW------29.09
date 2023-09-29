@@ -7,11 +7,14 @@ using namespace std;
 
 
 int main() {
-    //my path for check: C:\Users\Admin\source\repos\HW ---- 29.09\HW ---- 29.09\index.html
+    //my path for check: C:\Users\Admin\source\repos\HW ---- 29.09\HW ---- 29.09\index_correct.html         //correct
+    //my path for check: C:\Users\Admin\source\repos\HW ---- 29.09\HW ---- 29.09\index_incorrect.html       //inccorect
+
     char path[256];
     cout << "Enter path: ";
     cin.getline(path, sizeof(path));
     ifstream in(path);
+    
 
     char string;
     int errorCounter = 0;
@@ -32,7 +35,7 @@ int main() {
         }
         if (count_close > count_open) {
             int rez = count_close - count_open;
-            cout << "Find " << rez << "errors!" << endl;
+            cout << "Find " << rez << " errors!" << endl;
         }
         else if (count_close < count_open) {
             int rez = count_open - count_close;
